@@ -1,35 +1,4 @@
-### GET /stats
-
-Thống kê sử dụng hệ thống.
-
-**Response:**
-```json
-{
-  "active_threads": 5,
-  "total_messages": 150,
-  "ai_provider": "Google Gemini",
-  "features": [
-    "Query routing",
-    "Enhanced RAG retrieval",
-    "Multi-agent simulation", 
-    "Conversation memory",
-    "Real-time shop data"
-  ]
-}
-```
-
-### GET /test
-
-Test Gemini API connection.
-
-**Response:**
-```json
-{
-  "status": "success", 
-  "response": "Gemini connected successfully!",
-  "gemini_working": true
-}
-```# 🤖 Agentic RAG System
+# 🤖 Agentic RAG System
 
 A smart Retrieval-Augmented Generation (RAG) system with reasoning and autonomous action capabilities, built with Google Gemini AI and Vector Search.
 
@@ -650,4 +619,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 📧 Email: truongthinhnguyen30303@gmail.com
+- 📧 Email: support@yourcompany.com
+- 💬 Discord: [Join our server](https://discord.gg/yourserver)
+- 📖 Documentation: [Read the docs](https://docs.yourcompany.com)
+- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/agentic-rag-gemini/issues)
