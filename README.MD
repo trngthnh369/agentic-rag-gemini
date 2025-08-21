@@ -29,126 +29,79 @@ Test Gemini API connection.
   "response": "Gemini connected successfully!",
   "gemini_working": true
 }
-```# 🤖 Enhanced Agentic RAG System
+```# 🤖 Agentic RAG System
 
-Một hệ thống RAG (Retrieval-Augmented Generation) thông minh với khả năng suy luận và hành động tự động, được xây dựng với Google Gemini và Agents Framework.
+A smart Retrieval-Augmented Generation (RAG) system with reasoning and autonomous action capabilities, built with Google Gemini AI and Vector Search.
 
 ![Python](https://img.shields.io/badge/python-v3.8+-blue.svg)
 ![Gemini](https://img.shields.io/badge/Google-Gemini-4285F4.svg)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-## 📋 Mục lục
+## 🎯 Overview
 
-- [Tổng quan](#-tổng-quan)
-- [Kiến trúc hệ thống](#-kiến-trúc-hệ-thống)
-- [Tính năng](#-tính-năng)
-- [Cài đặt](#-cài-đặt)
-- [Cấu hình](#-cấu-hình)
-- [Sử dụng](#-sử-dụng)
-- [API Documentation](#-api-documentation)
-- [Workflow chi tiết](#-workflow-chi-tiết)
-- [Monitoring](#-monitoring)
-- [Troubleshooting](#-troubleshooting)
-- [Contributing](#-contributing)
+Agentic RAG System is a smart chatbot system designed to answer questions about products and store information. The system utilizes advanced AI techniques to:
 
-## 🎯 Tổng quan
+- **Auto-optimize user queries** 
+- **Make intelligent decisions** about information retrieval
+- **Select appropriate data sources** (Vector DB, Google Sheets, Internet)
+- **Evaluate and improve** response quality continuously
 
-Enhanced Agentic RAG System là một hệ thống chatbot thông minh được thiết kế để trả lời câu hỏi về sản phẩm và thông tin cửa hàng. Hệ thống sử dụng các kỹ thuật AI tiên tiến để:
+## 🏗️ Architecture
 
-- **Tự động tối ưu hóa câu hỏi** của người dùng
-- **Quyết định thông minh** về việc cần truy xuất thông tin
-- **Lựa chọn nguồn dữ liệu phù hợp** (Vector Database, Google Sheets, Internet)
-- **Đánh giá và cải thiện** chất lượng câu trả lời liên tục
+- **Manager Agent**: Coordinates workflow and task delegation
+- **Product Agent**: Handles product information queries 
+- **Shop Info Agent**: Manages store-related queries
+- **Query Processor**: Optimizes and processes queries
+- **Multi-source Retriever**: Fetches data from multiple sources
 
-### 🎪 Demo
+## ✨ Features
 
-```
-👤 User: "Nokia giá bao nhiêu?"
+### Core Features
+- ✅ Intelligent Query Processing
+- ✅ Multi-Agent Architecture 
+- ✅ Multi-Source Retrieval
+- ✅ Quality Assurance
+- ✅ Conversation Memory
+- ✅ Real-time Updates
 
-🤖 System Process:
-  ↳ Rewrite: "Giá hiện tại của các sản phẩm Nokia có sẵn"
-  ↳ Need Info: YES - cần database sản phẩm  
-  ↳ Source: Vector Database
-  ↳ Retrieve: [Thông tin Nokia 3210 4G, Nokia XR20...]
-  ↳ Generate: "Nokia 3210 4G có giá 1,590,000₫..."
-  ↳ Evaluate: Response quality GOOD ✓
+### Advanced Features
+- ✅ Iterative Refinement
+- ✅ Context-Aware Responses
+- ✅ Vietnamese Language Support
+- ✅ Semantic Search
+- ✅ Dynamic Source Selection
 
-🤖 Assistant: Nokia 3210 4G hiện có giá 1,590,000₫. Sản phẩm đang có khuyến mãi trả góp 0% và nhiều ưu đãi hấp dẫn khác...
-```
-
-## 🏗️ Kiến trúc hệ thống
-
-```mermaid
-graph TD
-    A[User Query] --> B[Enhanced Manager Agent]
-    B --> C{Query Analysis}
-    C --> D[Query Rewriter]
-    D --> E{Need Additional Info?}
-    E -->|No| F[Direct Response]
-    E -->|Yes| G[Source Selector]
-    G --> H[Vector Database]
-    G --> I[Google Sheets]
-    G --> J[Internet Search]
-    H --> K[Information Retriever]
-    I --> K
-    J --> K
-    K --> L[Response Generator]
-    L --> M{Quality Evaluation}
-    M -->|Good| N[Final Response]
-    M -->|Poor| D
-    
-    style A fill:#e1f5fe
-    style N fill:#e8f5e8
-    style B fill:#fff3e0
-    style G fill:#f3e5f5
-```
-
-### 🧩 Components
-
-- **Enhanced Manager Agent**: Điều phối và quản lý workflow
-- **Enhanced Product Agent**: Chuyên xử lý thông tin sản phẩm
-- **Enhanced Shop Info Agent**: Quản lý thông tin cửa hàng
-- **Query Processor**: Xử lý và tối ưu hóa câu hỏi
-- **Multi-source Retriever**: Truy xuất từ nhiều nguồn dữ liệu
-
-## ✨ Tính năng
-
-### 🎯 Core Features
-- ✅ **Intelligent Query Processing** - Tự động viết lại và tối ưu câu hỏi
-- ✅ **Multi-Agent Architecture** - Hệ thống agents chuyên biệt
-- ✅ **Multi-Source Retrieval** - Vector DB + Google Sheets + Web Search
-- ✅ **Quality Assurance** - Đánh giá và cải thiện liên tục
-- ✅ **Conversation Memory** - Lưu trữ ngữ cảnh cuộc hội thoại
-- ✅ **Real-time Updates** - Cập nhật thông tin từ Google Sheets
-
-### 🚀 Advanced Features
-- ✅ **Iterative Refinement** - Cải thiện cho đến khi đạt chất lượng tối ưu
-- ✅ **Context-Aware Responses** - Hiểu ngữ cảnh và ý định người dùng
-- ✅ **Multilingual Support** - Hỗ trợ tiếng Việt và tiếng Anh
-- ✅ **Semantic Search** - Tìm kiếm dựa trên ý nghĩa với Gemini Embeddings
-- ✅ **Dynamic Source Selection** - Lựa chọn nguồn dữ liệu thông minh
-
-### 📊 Technical Features
-- ✅ **Google Gemini Integration** - Sử dụng AI model tiên tiến
-- ✅ **ChromaDB Vector Store** - Lưu trữ và tìm kiếm vector hiệu quả
-- ✅ **RESTful API** - API endpoints cho integration
-- ✅ **Streamlit UI** - Giao diện web thân thiện
-- ✅ **Health Monitoring** - Theo dõi trạng thái hệ thống
-
-## 🛠️ Cài đặt
+## 🛠️ Installation
 
 ### Prerequisites
-
 - Python 3.8+
-- **Chỉ cần Google Gemini API Key** (không cần OpenAI)
-- Google Service Account (for Sheets access)
+- Google Gemini API Key
+- Google Service Account
+
+```bash
+# 1. Clone repository
+git clone <repository-url>
+cd agentic-rag
+
+# 2. Create virtual environment
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+# or
+venv\Scripts\activate     # Windows
+
+# 3. Install dependencies
+pip install -r [requirements.txt](http://_vscodecontentref_/0)
+
+# 4. Setup environment variables
+cp .env.example .env
+# Add your API keys to .env
+```
 
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/enhanced-agentic-rag.git
-cd enhanced-agentic-rag
+git clone https://github.com/trngthnh369/agentic-rag-gemini.git
+cd agentic-rag-gemini
 ```
 
 ### 2. Tạo Virtual Environment
@@ -697,7 +650,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 📧 Email: support@yourcompany.com
-- 💬 Discord: [Join our server](https://discord.gg/yourserver)
-- 📖 Documentation: [Read the docs](https://docs.yourcompany.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/enhanced-agentic-rag/issues)
+- 📧 Email: truongthinhnguyen30303@gmail.com
