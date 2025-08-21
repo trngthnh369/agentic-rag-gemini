@@ -49,8 +49,8 @@ Agentic RAG System is a smart chatbot system designed to answer questions about 
 
 ```bash
 # 1. Clone repository
-git clone <repository-url>
-cd agentic-rag
+git clone https://github.com/trngthnh369/agentic-rag-gemini.git
+cd agentic-rag-gemini
 
 # 2. Create virtual environment
 python -m venv venv
@@ -63,49 +63,16 @@ pip install -r [requirements.txt](http://_vscodecontentref_/0)
 
 # 4. Setup environment variables
 cp .env.example .env
-# Add your API keys to .env
-```
-
-### 1. Clone Repository
-
-```bash
-git clone https://github.com/trngthnh369/agentic-rag-gemini.git
-cd agentic-rag-gemini
-```
-
-### 2. Tạo Virtual Environment
-
-```bash
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# hoặc
-venv\Scripts\activate     # Windows
-```
-
-### 3. Cài đặt Dependencies (Pure Gemini)
-
-```bash
-pip install -r requirements_gemini.txt
-```
-
-### 4. ⚙️ Cấu hình
-
-#### Environment Variables
-
-Tạo file `.env`:
-
 ```env
-# Chỉ cần Gemini API Key
 GEMINI_API_KEY=your_gemini_api_key_here
 
 # Optional: For debugging
 DEBUG=true
 LOG_LEVEL=INFO
 ```
-
 #### Google Service Account
 
-Đặt file `mles-class-12c1216b7303.json` (Google Service Account credentials) vào thư mục root.
+Đặt file Google Service Account credentials vào thư mục root.
 
 #### Data Setup
 
@@ -130,13 +97,13 @@ Script sẽ:
 #### 1. Database Initialization
 
 ```bash
-python enhanced_setup.py
+python setup.py
 ```
 
 #### 2. Start Backend Server (Pure Gemini)
 
 ```bash
-python gemini_serve.py
+python serve.py
 ```
 
 Server sẽ chạy tại `http://localhost:5001`
@@ -571,18 +538,6 @@ Hệ thống này chứng minh rằng bạn có thể có được một agentic
 "Nếu Nokia 3210 hết hàng thì có sản phẩm tương tự nào?"
 ```
 
-## 🤝 Contributing
-
-### Development Setup
-
-1. Fork repository
-2. Create feature branch: `git checkout -b feature/amazing-feature`
-3. Make changes
-4. Add tests
-5. Commit: `git commit -m 'Add amazing feature'`
-6. Push: `git push origin feature/amazing-feature`
-7. Create Pull Request
-
 ### Code Style
 
 ```bash
@@ -619,7 +574,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 📧 Email: support@yourcompany.com
-- 💬 Discord: [Join our server](https://discord.gg/yourserver)
-- 📖 Documentation: [Read the docs](https://docs.yourcompany.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/agentic-rag-gemini/issues)
+- 📧 Email: truongthinhnguyen30303@gmai.com
