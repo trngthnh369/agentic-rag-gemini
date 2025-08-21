@@ -162,9 +162,9 @@ Gửi tin nhắn và nhận phản hồi từ hệ thống RAG.
 ```json
 {
   "role": "assistant",
-  "content": "string",      // Câu trả lời
-  "enhanced": true,         // Flag enhanced processing
-  "thread_id": "string"     // Thread ID
+  "content": "string",      
+  "enhanced": true,         
+  "thread_id": "string"     
 }
 ```
 
@@ -176,8 +176,8 @@ Kiểm tra trạng thái hệ thống.
 ```json
 {
   "status": "healthy",
-  "enhanced_rag": true,
-  "agents": ["enhanced_manager", "enhanced_product", "enhanced_shop_information"]
+  "rag": true,
+  "agents": ["manager", "product", "shop_information"]
 }
 ```
 
@@ -253,7 +253,7 @@ curl http://localhost:5001/stats
 
 ```bash
 # View server logs
-tail -f enhanced_serve.log
+tail -f serve.log
 
 # Monitor database operations
 tail -f chromadb.log
@@ -286,7 +286,7 @@ python run.py  # Chọn option 4
 ```bash
 # Reset database
 rm -rf db/
-python enhanced_setup.py
+python setup.py
 ```
 
 #### 3. Google Sheets Connection
@@ -368,7 +368,7 @@ python gemini_serve.py
 - Intelligent routing dựa trên keywords và context
 
 ### 📈 **Maintained Features**
-- ✅ Enhanced RAG workflow
+- ✅ RAG workflow
 - ✅ Multi-agent simulation  
 - ✅ Query rewriting
 - ✅ Quality evaluation
@@ -427,7 +427,7 @@ requests.post('http://localhost:5001/chat', json={
 
 # System will:
 # 1. Route to PRODUCT_AGENT
-# 2. Use enhanced RAG to find Samsung phones < 5M
+# 2. Use RAG to find Samsung phones < 5M
 # 3. Include shop information in response
 ```
 
@@ -456,8 +456,8 @@ python run.py  # Choose option 4
 
 # Test RAG workflow
 python -c "
-from enhanced_rag import EnhancedRAG
-rag = EnhancedRAG()
+from rag import RAG
+rag = RAG()
 result = rag.process_query('Nokia giá bao nhiêu?')
 print(result)
 "
