@@ -142,7 +142,7 @@ class RAG:
         self.query_processor = QueryProcessor()
         self.model = genai.GenerativeModel('gemini-2.0-flash')
         self.web_searcher = WebSearcher()
-        self.max_iterations = 3
+        self.max_iterations = 10
         
     def get_embedding(self, text: str) -> list[float]:
         """Generate embeddings using Gemini"""
@@ -200,7 +200,7 @@ class RAG:
                     'https://www.googleapis.com/auth/drive']
 
             credentials = ServiceAccountCredentials.from_json_keyfile_name(
-                'mles-class-12c1216b7303.json', scope
+                'agentic-rag-469610-2993c19c6c9b.jsonn', scope
             )
             client = gspread.authorize(credentials)
             sheet = client.open_by_url(
