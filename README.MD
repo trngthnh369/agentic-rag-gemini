@@ -292,7 +292,7 @@ python setup.py
 #### 3. Google Sheets Connection
 ```bash
 # Verify credentials file
-ls -la mles-class-12c1216b7303.json
+ls -la file_name.json
 
 # Test connection
 python -c "
@@ -308,7 +308,7 @@ print('Google Sheets connection OK')
 #### 4. Missing Files Error
 ```bash
 # Check required files
-ls -la .env mles-class-12c1216b7303.json hoanghamobile.csv
+ls -la .env file_name.json hoanghamobile.csv
 
 # Create .env if missing
 echo "GEMINI_API_KEY=your_api_key_here" > .env
@@ -317,7 +317,7 @@ echo "GEMINI_API_KEY=your_api_key_here" > .env
 #### 5. Import Errors
 ```bash
 # Reinstall dependencies
-pip install -r requirements_gemini.txt --force-reinstall
+pip install -r requirements.txt --force-reinstall
 
 # Check Python version
 python --version  # Should be 3.8+
@@ -350,8 +350,8 @@ htop
 du -sh db/
 
 # Restart server if memory issues
-pkill -f gemini_serve.py
-python gemini_serve.py
+pkill -f serve.py
+python serve.py
 ```
 
 ## 🎯 Key Differences from Original
@@ -378,7 +378,7 @@ python gemini_serve.py
 ### 🛠️ **Simplified Deployment**
 ```bash
 # Chỉ cần 3 lệnh
-pip install -r requirements_gemini.txt
+pip install -r requirements.txt
 echo "GEMINI_API_KEY=your_key" > .env
 python run.py
 ```
